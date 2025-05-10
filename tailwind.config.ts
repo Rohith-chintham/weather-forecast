@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,8 +62,20 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+        // Weather specific colors
+        sunny: '#FFB830',
+        cloudy: '#BECBDE',
+        rainy: '#5096CE',
+        snowy: '#E3F1FC',
+        stormy: '#505A77',
 			},
+			backgroundImage: {
+        'clear-sky': 'linear-gradient(to bottom, #1E90FF, #87CEEB)',
+        'cloudy-sky': 'linear-gradient(to bottom, #6495ED, #C5D6E9)',
+        'rainy-sky': 'linear-gradient(to bottom, #4682B4, #708090)',
+        'night-sky': 'linear-gradient(to bottom, #191970, #483D8B)',
+      },
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -84,11 +97,26 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+        'rain': {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(20px)', opacity: '0' }
+        },
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' }
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' }
+        }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+        'rain': 'rain 1.5s linear infinite',
+        'fade-in': 'fade-in 1s ease-out',
+        'float': 'float 3s ease-in-out infinite'
 			}
 		}
 	},
